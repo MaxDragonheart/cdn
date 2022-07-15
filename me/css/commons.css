@@ -1,0 +1,154 @@
+html, body {
+ height: 100vh;
+ background-color: rgba(255, 255, 255, 1) !important;
+}
+body {
+    /*padding-top: 30px;*/
+}
+footer, .site-navbar {
+    background-color: rgba(255, 255, 255, 1.0) !important;
+}
+.social-card {
+    color: rgba(152, 200, 246, 1.0);
+}
+.social-card:hover {
+    color: rgba(0, 0, 0, 1.0);
+    border: 1px solid rgba(152, 200, 246, 1.0);
+    border-radius: 25px;
+}
+.donation-button {
+    color: rgba(0, 0, 0, 1.0);
+}
+.donation-button:hover {
+    color: rgba(152, 200, 246, 1.0);
+    border: 1px solid rgba(152, 200, 246, 1.0);
+    border-radius: 25px;
+    size: 50px;
+}
+.side-container {
+    margin: 0px 0px 10px 0px;
+}
+article {
+    border-bottom: 1px solid rgba(168, 168, 168, 1.0) !important;
+}
+.side-right {
+    border-left: 1px solid rgba(168, 168, 168, 1.0) !important;
+    height: 100%;
+    padding: 5px 0px 5px 0px;
+}
+article pre {
+    background: rgba(50, 52, 67, 1.0);
+    color: rgba(248, 248, 242, 1.0);
+    font-size: 110%;
+    border-radius: 5px;
+    padding: 5px;
+}
+article img {
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 5px;
+    box-shadow: 2px 2px 5px grey;
+    background-color: rgba(255, 255, 255, 1.0);
+    display: block;
+    margin: 2px auto 2px auto;
+    border-radius: 5px;
+}
+article a, .article-button {
+    background-color: rgba(152, 200, 246, 1.0);
+}
+article a:hover {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(152, 200, 246, 1.0);
+}
+.article-header {
+    border-top: 1px solid rgba(168, 168, 168, 1.0) !important;
+    border-bottom: 1px solid rgba(168, 168, 168, 1.0) !important;
+}
+.article-button:hover {
+    border: rgba(152, 200, 246, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+}
+.footer {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(0, 0, 0, 1.0) !important;
+}
+footer a, article a, .article-title-link {
+    color: rgba(0, 0, 0, 1.0) !important;
+    text-decoration-style: dotted !important;
+}
+footer a:hover, .article-title-link:hover {
+    text-decoration: none !important;
+}
+footer a:visited {
+    text-decoration: none !important;
+}
+.footer-link-title {
+    color: rgba(0, 0, 0, 1.0) !important;
+    font-size: 15px !important;
+}
+.footer-link {
+    margin-left: 5px !important;
+}
+.nav-container {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.navbar-container {
+    margin: 0px !important;
+    padding: 0px 0px 5px 0px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 1.0) !important;
+}
+.post-card {
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px solid rgba(168, 168, 168, 1.0) !important;
+}
+.post-card-header {
+    width:200px;
+    height:200px;
+    object-fit:cover;
+}
+.blog-img-header {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 10px;
+}
+header {
+    margin-bottom: 100px;
+}
+
+/* Extra small devices (screen less than 576px)*/
+@media (min-width: 360px) {
+    header {
+        margin-bottom: 170px;
+    }
+ }
+
+
+/* Small devices (screen 768px and up)*/
+@media (min-width: 810px) {
+    header {
+        margin-bottom: 120px;
+    }
+ }
+
+/* Medium devices (screen 992px and up)*/
+@media (min-width: 992px) {
+    header {
+        margin-bottom: 100px;
+    }
+ }
+
+/* Large devices (screen 1200px and up)*/
+@media (min-width: 1200px) {
+    header {
+        margin-bottom: 100px;
+    }
+ }
+
+/* Extra large devices (screen 1400px and up)*/
+@media (min-width: 1400px) {
+    header {
+        margin-bottom: 100px;
+    }
+ }
