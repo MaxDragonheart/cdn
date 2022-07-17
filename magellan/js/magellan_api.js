@@ -36,6 +36,7 @@ let vectorsLayerAPI = function(
 
       // Vector's style definition.
       function styleDefinition(feature, resolution) {
+          console.log(feature)
           feature_id = feature.get('fid').toString();
 
           stroke = new ol.style.Stroke({
@@ -113,7 +114,7 @@ let vectorsLayerAPI = function(
       layerVector = new ol.layer.Vector({
         title: vectorsLayerName,
         source: new ol.source.Vector(),
-        style: style,
+        style: styleDefinition,
         minZoom: setMinZoom,
         maxZoom: setMaxZoom,
         zIndex: setZIndex,
