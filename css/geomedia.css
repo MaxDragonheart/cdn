@@ -51,14 +51,6 @@ html, body {
   background-color: rgba(2, 195, 154, 1);
   color: rgba(5, 102, 141, 1);
 }
-.btn-measure {
-  background-color: rgba(255, 193, 7, 1);
-  color: rgba(220, 53, 69, 1);
-}
-.btn-measure:hover {
-  background-color: rgba(220, 53, 69, 1);
-  color: rgba(255, 193, 7, 1);
-}
 .btn-map-legend {
   position: absolute;
   right: 0.5vw;
