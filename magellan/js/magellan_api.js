@@ -33,46 +33,88 @@ let vectorsLayerAPI = function(
       this.setZIndex = setZIndex;
       this.setOpacity = setOpacity;
 
-      let stroke, fill;
-      // Vector's style definition.
-      stroke = new ol.style.Stroke({
-          color: setStrokeColor,
-          width: setStrokeWidth,
-          lineDash: [setStrokeLineDashLength, setStrokeLineDashSpace],
-          lineCap: 'butt',
-          lineJoin: 'miter'
-      });
-      fill = new ol.style.Fill({
-        color: setFillColor,
-      });
 
-      let style;
-      // Change style based on the geometry type.
-      if (vectorType.toLowerCase() === 'polygon') {
-        style = new ol.style.Style({
-            stroke: stroke,
-            fill: fill
-        });
-      } else if (vectorType.toLowerCase() === 'linestring') {
-        style = new ol.style.Style({
-            stroke: stroke
-        });
-      } else if (vectorType.toLowerCase() === 'point') {
-        style = new ol.style.Style({
-            image: new ol.style.Circle({
-              radius: setStrokeWidth * 5,
-              stroke: stroke,
-              fill: fill
-            })
-        });
-      } else {
-        console.error('Geometry not recognized! Accepted geometries: point, linestring, polygon.');
-      }
+      // Vector's style definition.
+      function styleDefinition(feature, resolution) {
+          console.log(feature)
+          feature_id = feature.get('fid').toString();
+
+          stroke = new ol.style.Stroke({
+              color: setStrokeColor,
+              width: setStrokeWidth,
+              lineDash: [setStrokeLineDashLength, setStrokeLineDashSpace],
+              lineCap: 'butt',
+              lineJoin: 'miter'
+          });
+          fill = new ol.style.Fill({
+              color: setFillColor,
+          });
+          text = new ol.style.Text({
+              font: '8px Calibri,sans-serif',
+              fill: new ol.style.Fill({
+                  color:'#000'
+              }),
+              stroke: new ol.style.Stroke({
+                  color:'#ffffff',
+                  width: 3,
+              }),
+              textAlign: 'center',
+              offsetX: 0,
+              offsetY: 0,
+          });
+
+          var pointStyle = new ol.style.Style({
+              image: new ol.style.Circle({
+                  radius: setStrokeWidth * 5,
+                  fill: fill,
+                  stroke: stroke,
+              }),
+              text: text,
+          });
+          styleSimple.getText().setText(feature_id);
+
+          return pointStyle;
+      };
+
+      // let stroke, fill;
+      // stroke = new ol.style.Stroke({
+      //     color: setStrokeColor,
+      //     width: setStrokeWidth,
+      //     lineDash: [setStrokeLineDashLength, setStrokeLineDashSpace],
+      //     lineCap: 'butt',
+      //     lineJoin: 'miter'
+      // });
+      // fill = new ol.style.Fill({
+      //   color: setFillColor,
+      // });
+      // let style;
+      // // Change style based on the geometry type.
+      // if (vectorType.toLowerCase() === 'polygon') {
+      //   style = new ol.style.Style({
+      //       stroke: stroke,
+      //       fill: fill
+      //   });
+      // } else if (vectorType.toLowerCase() === 'linestring') {
+      //   style = new ol.style.Style({
+      //       stroke: stroke
+      //   });
+      // } else if (vectorType.toLowerCase() === 'point') {
+      //   style = new ol.style.Style({
+      //       image: new ol.style.Circle({
+      //         radius: setStrokeWidth * 5,
+      //         stroke: stroke,
+      //         fill: fill
+      //       })
+      //   });
+      // } else {
+      //   console.error('Geometry not recognized! Accepted geometries: point, linestring, polygon.');
+      // }
+
       // Build the vector
       layerVector = new ol.layer.Vector({
         title: vectorsLayerName,
         source: new ol.source.Vector(),
-        style: style,
+        style: styleDefinition,
         minZoom: setMinZoom,
         maxZoom: setMaxZoom,
         zIndex: setZIndex,
